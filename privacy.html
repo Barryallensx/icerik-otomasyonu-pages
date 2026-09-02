@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İçerik Otomasyonu Gizlilik</title>
+<meta name="description" content="İçerik Otomasyonu uygulamasının gizlilik politikası.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+--bg:#FAFAF8; --surface:#FFFFFF; --text:#1C1B1A; --text-muted:#6B6862;
+--accent:#3454D1; --accent-soft:#EEF1FC; --border:#E4E2DD; --rule:#D8D5CE;
+--good:#2E7D4F; --good-soft:#E9F5EE;
+}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]){
+--bg:#16151A; --surface:#1E1D22; --text:#ECEAE6; --text-muted:#9C98A0;
+--accent:#8CA0FF; --accent-soft:#242A44; --border:#302E35; --rule:#3A3843;
+--good:#6FCF9A; --good-soft:#1B3327;
+}
+}
+:root[data-theme="dark"]{
+--bg:#16151A; --surface:#1E1D22; --text:#ECEAE6; --text-muted:#9C98A0;
+--accent:#8CA0FF; --accent-soft:#242A44; --border:#302E35; --rule:#3A3843;
+--good:#6FCF9A; --good-soft:#1B3327;
+}
+*{box-sizing:border-box;}
+html,body{margin:0; padding:0;}
+body{
+background:var(--bg); color:var(--text);
+font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+line-height:1.6;
+}
+.wrap{max-width:680px; margin:0 auto; padding:64px 24px 96px;}
+.kicker{
+font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.08em;
+text-transform:uppercase; color:var(--accent); margin:0 0 14px;
+}
+h1{
+font-family:'Fraunces',Georgia,serif; font-weight:600; font-size:clamp(30px,5vw,42px);
+line-height:1.15; margin:0 0 8px; text-wrap:balance;
+}
+.meta{
+color:var(--text-muted); font-size:14px; margin:0 0 40px;
+font-family:'IBM Plex Mono',monospace;
+}
+.lead{
+font-size:17px; color:var(--text); margin:0 0 48px; padding:20px 22px;
+background:var(--accent-soft); border-radius:10px; border:1px solid var(--border);
+}
+section{margin:0 0 40px;}
+.num{
+font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--accent);
+display:inline-block; margin-bottom:6px;
+}
+h2{
+font-family:'Fraunces',Georgia,serif; font-weight:600; font-size:22px;
+margin:0 0 12px; text-wrap:balance;
+}
+p{margin:0 0 14px; max-width:65ch;}
+ul{margin:0 0 14px; padding-left:22px;}
+li{margin:0 0 8px; max-width:62ch;}
+a{color:var(--accent);}
+hr{border:none; border-top:1px solid var(--rule); margin:48px 0;}
+.contact{font-size:15px; color:var(--text-muted);}
+.contact strong{color:var(--text); font-weight:600;}
+.grid{
+display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 14px;
+}
+@media (max-width:520px){ .grid{grid-template-columns:1fr;} }
+.card{
+border:1px solid var(--border); border-radius:10px; padding:16px 18px;
+background:var(--surface);
+}
+.card .tag{
+font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em;
+text-transform:uppercase; padding:2px 8px; border-radius:999px; display:inline-block;
+margin-bottom:8px;
+}
+.card.have .tag{color:var(--accent); background:var(--accent-soft);}
+.card.not .tag{color:var(--good); background:var(--good-soft);}
+.card ul{margin:0; padding-left:18px;}
+.card li{font-size:14px; margin-bottom:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="kicker">İçerik Otomasyonu &middot; Gizlilik Politikası</p>
+<h1>Gizlilik Politikası</h1>
+<p class="meta">Son güncelleme: 2 Eylül 2026</p>
+<p class="lead">İçerik Otomasyonu, tek bir kişi tarafından işletilen kişisel bir otomasyon aracıdır. Yalnızca uygulama sahibinin kendi yetkilendirdiği TikTok hesaplarına video paylaşmak için TikTok API'sine bağlanır. Üçüncü kişilerin verisi toplanmaz.</p>
+<section>
+<span class="num">01</span>
+<h2>Ne erişiyoruz, ne erişmiyoruz</h2>
+<div class="grid">
+<div class="card have">
+<span class="tag">Erişiyoruz</span>
+<ul>
+<li>Temel profil bilgisi (kullanıcı adı, avatar) — hangi hesaba bağlandığını doğrulamak için</li>
+<li>Video yükleme/paylaşma izni (OAuth erişim jetonu)</li>
+</ul>
+</div>
+<div class="card not">
+<span class="tag">Erişmiyoruz</span>
+<ul>
+<li>Özel mesajlar, takipçi listesi, izleme geçmişi</li>
+<li>Konum verisi</li>
+<li>Üçüncü kişilere ait herhangi bir veri</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<span class="num">02</span>
+<h2>Veriler nasıl saklanıyor</h2>
+<p>OAuth erişim ve yenileme jetonları, yalnızca uygulama sahibinin kendi otomasyon altyapısında şifreli sır (secret) olarak saklanır. Bu jetonlar hiçbir üçüncü tarafla paylaşılmaz, satılmaz veya reklam amacıyla kullanılmaz.</p>
+</section>
+<section>
+<span class="num">03</span>
+<h2>Verilerin saklanma süresi</h2>
+<p>Bir hesabın bağlantısı kaldırıldığında veya izin iptal edildiğinde, o hesaba ait erişim jetonu otomasyon altyapısından silinir.</p>
+</section>
+<section>
+<span class="num">04</span>
+<h2>Haklarınız</h2>
+<ul>
+<li>Bağlı bir TikTok hesabının erişimini istediğiniz zaman TikTok uygulamasındaki hesap ayarlarından iptal edebilirsiniz.</li>
+<li>Saklanan verilerin silinmesini aşağıdaki iletişim adresinden talep edebilirsiniz.</li>
+</ul>
+</section>
+<hr>
+<p class="contact"><strong>İletişim:</strong> hayriyekayabas0@gmail.com</p>
+</div>
+</body>
+</html>
+
